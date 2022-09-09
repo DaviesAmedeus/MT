@@ -27,7 +27,7 @@ class _AllSmsScreenState extends State<AllSmsScreen> {
   Widget build(BuildContext context) {
     List sentensi = [];
 
-    //VARIABLES
+    //VARIABLES DECLARATIONS
     var sideMenu = Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
