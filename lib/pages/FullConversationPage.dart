@@ -131,16 +131,18 @@ class _FullConversationPageState extends State<FullConversationPage> {
 
 //Function inayoita sehemu ya kuthibitisha ujumbe wa kitapeli (Dialog)
   Future openDialog(BuildContext context, meseji, nambaYaTapeli ) async {
+
     showDialog(
         context:context,
         builder: (context)=> AlertDialog(
+
           contentPadding: const EdgeInsets.only(left: 25, right: 25),
           title: Center(child: Text("Thibitisha kuripoti")),
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(20.0))),
 
           content: Container(
-            height:  200,
+            height:  300,
             width: 450,
             child: SingleChildScrollView(
               child: Column(
@@ -157,10 +159,13 @@ class _FullConversationPageState extends State<FullConversationPage> {
                         fontWeight: FontWeight.bold,
                       ),),
                   Text("${nambaYaTapeli} \n"),
+
                   Text("Ingiza namba uliyopokelea ujunbe wa kitapeli:",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),),
+                  SizedBox(height: 20,),
+
                   TextField(
                     controller: nambaYaMripoti,
                     decoration: InputDecoration(
@@ -189,9 +194,7 @@ class _FullConversationPageState extends State<FullConversationPage> {
                   child: TextButton(
                     onPressed: (){
                       sendDataToApi(meseji, nambaYaTapeli, nambaYaMripoti);
-                      print("=====> ${nambaYaMripoti.text}");
                      Navigator.of(context).pop();
-
 
                     },
                     child: Text("TUMA"),
